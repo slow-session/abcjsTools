@@ -41,6 +41,7 @@ const abcjsTools = (function () {
         let paperID = `abc-paper-${uniqid}`
         let audioID = `abc-audio-${uniqid}`
 
+
         let wrapper = document.getElementById(wrapperID);
 
         var abcTextarea = document.createElement("TEXTAREA");
@@ -86,6 +87,7 @@ const abcjsTools = (function () {
         let uniqid = Date.now().toString(16);
         let textareaID = `abc-textarea-${uniqid}`
         let paperID = `abc-paper-${uniqid}`
+        let warningsID = `abc-warnings-${uniqid}`
         let audioID = `abc-audio-${uniqid}`
 
         let wrapper = document.getElementById(wrapperID);
@@ -111,10 +113,14 @@ const abcjsTools = (function () {
         // load the ABC into the textarea
         document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g, "\n");
 
+        let warningsDiv = document.createElement("DIV");
+        warningsDiv.id = warningsID;
+        wrapper.appendChild(warningsDiv);
+
         // Draw the dots with the player
         let abcEditor = new window.ABCJS.Editor(textareaID, {
             paper_id: paperID,
-            warnings_id: "warnings",
+            warnings_id: warningsID,
             render_options: {
                 responsive: 'resize'
             },
