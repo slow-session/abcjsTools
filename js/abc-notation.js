@@ -71,7 +71,7 @@ const abcNotation = (function () {
             synth: {
                 el: `#${audioID}`,
                 options: {
-                    displayLoop: false,
+                    displayLoop: true,
                     displayRestart: true,
                     displayPlay: true,
                     displayProgress: true,
@@ -105,12 +105,8 @@ const abcNotation = (function () {
         abcTextarea.style.width = '100%';
         abcTextarea.rows = 13;
         abcTextarea.spellcheck = false;        
-        abcTextarea.placeholder = "Or type your ABC here...";
+        abcTextarea.placeholder = "Type your ABC here...";
         wrapper.appendChild(abcTextarea);
-
-        /*
-        <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false" placeholder="Or type your ABC here..."></textarea>
-        */
        
         // load the ABC into the textarea
         document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g,"\n");
@@ -126,7 +122,7 @@ const abcNotation = (function () {
             synth: {
                 el: `#${audioID}`,
                 options: {
-                    displayLoop: false,
+                    displayLoop: true,
                     displayRestart: true,
                     displayPlay: true,
                     displayProgress: true,
