@@ -103,6 +103,8 @@ const abcNotation = (function () {
         abcTextarea.id = textareaID;
         abcTextarea.style.display = 'block';
         abcTextarea.rows = 13;
+        abcTextarea.cols = 50;
+        abcTextarea.spellcheck = false;        
         abcTextarea.placeholder = "Or type your ABC here...";
         wrapper.appendChild(abcTextarea);
 
