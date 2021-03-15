@@ -30,19 +30,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 //
-//-- Allow upload of .abc files in "Add Media"
-//
-function abcjs_upload_mimes($mimes = array()) {
-
-	// Add a key and value for the ABC file type
-	$mimes['abc'] = "text/abc";
-
-	return $mimes;
-}
-
-add_action('upload_mimes', 'abcjs_upload_mimes');
-
-//
 //-- Add the javascript and css if there is a shortcode on the page.
 //
 function abcjs_conditionally_load_resources( $posts ) {
@@ -89,29 +76,12 @@ function process_abc( $content ) {
 	return $content2;
 }
 
-// If a URL was passed in, then read the string from that, otherwise read the string from the contents.
-function get_abc_string( $file, $content) {
-	if ($file) {
-		$content2 = file_get_contents( $file );
-		$content2 = preg_replace("&\r\n&", "\x01", $content2);
-		$content2 = preg_replace("&\n&", "\x01", $content2);
-		$content2 = preg_replace("-'-", "\\\'", $content2);
-		$content2 = preg_replace("-\"-", "\\\"", $content2);
-	} else
-		$content2 = process_abc($content);
-	return $content2;
-}
-
 //
 //-- Interpret the [abcjs] shortcode
 //
 function abcjs_create_music( $atts, $content ) {
-    $a = shortcode_atts( array(
-	    'file' => '',
-	), $atts );
+    $content2 = process_abc($content);
 
-    $content2 = get_abc_string($a['file'], $content);
-    
     $wrapperID = 'abc-wrapper-' . uniqid();
 
     $output = '<!-- Start of ABC + player code -->' . "\n";
@@ -129,11 +99,7 @@ add_shortcode( 'abc-music', 'abcjs_create_music' );
 //-- Interpret the [abcjs-player] shortcode
 //
 function abcjs_create_player( $atts, $content ) {
-    $a = shortcode_atts( array(
-	    'file' => '',
-	), $atts );
-
-    $content2 = get_abc_string($a['file'], $content);
+    $content2 = process_abc($content);
     
     $wrapperID = 'abc-wrapper-' . uniqid();
 
@@ -152,11 +118,7 @@ add_shortcode( 'abc-player', 'abcjs_create_player' );
 //-- Interpret the [abcjs-editor] shortcode
 //
 function abcjs_create_editor( $atts, $content ) {
-    $a = shortcode_atts( array(
-	    'file' => '',
-	), $atts );
-
-    $content2 = get_abc_string($a['file'], $content);
+    $content2 = process_abc($content);
     
     $wrapperID = 'abc-wrapper-' . uniqid();
 
