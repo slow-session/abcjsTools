@@ -52,7 +52,7 @@ function abcjs_conditionally_load_resources( $posts ) {
 	}
 	$has_abcjs = false;
 	foreach ( $posts as $post ) {
-		if ( stripos( $post->post_content, '[abcjs' ) !== false ) {
+		if ( stripos( $post->post_content, '[abc-' ) !== false ) {
 			$has_abcjs = true;
 			break;
 		}
