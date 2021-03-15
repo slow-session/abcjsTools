@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: ABC Notation
+Plugin Name: ABCJS Tools
 Plugin URI: http://wordpress.paulrosen.net/plugins/abc-notation
 Description: Include sheet music on your WordPress site by simply specifying the ABC style string in the shortcode <strong>[abcjs]</strong>. For a complete description of the syntax, see the <a href="http://wordpress.paulrosen.net/plugins/abc-notation">Plugin Site</a>.
 Version: 6.0.0
@@ -117,7 +117,7 @@ function abcjs_create_music( $atts, $content ) {
     $output = '<!-- Start of ABC + player code -->' . "\n";
     $output .= '<div id="' . $wrapperID . '"></div>' . "\n";
     $output .= '<script type="text/javascript">' . "\n";
-    $output .= 'abcNotation.displayABCmusic("' . $wrapperID . '", "' . $content2 . '");' . "\n";
+    $output .= 'abcjsTools.displayABCmusic("' . $wrapperID . '", "' . $content2 . '");' . "\n";
     $output .= '</script>' . "\n";
     $output .= '<!-- End of ABC + player code -->' . "\n";
     
@@ -140,7 +140,7 @@ function abcjs_create_player( $atts, $content ) {
     $output = '<!-- Start of ABC + player code -->' . "\n";
     $output .= '<div id="' . $wrapperID . '"></div>' . "\n";
     $output .= '<script type="text/javascript">' . "\n";
-    $output .= 'abcNotation.displayABCplayer("' . $wrapperID . '", "' . $content2 . '");' . "\n";
+    $output .= 'abcjsTools.displayABCplayer("' . $wrapperID . '", "' . $content2 . '");' . "\n";
     $output .= '</script>' . "\n";
     $output .= '<!-- End of ABC + player code -->' . "\n";
     
@@ -163,7 +163,7 @@ function abcjs_create_editor( $atts, $content ) {
     $output = '<!-- Start of ABC + player code -->' . "\n";
     $output .= '<div id="' . $wrapperID . '"></div>' . "\n";
     $output .= '<script type="text/javascript">' . "\n";
-    $output .= 'abcNotation.displayABCeditor("' . $wrapperID . '", "' . $content2 . '");' . "\n";
+    $output .= 'abcjsTools.displayABCeditor("' . $wrapperID . '", "' . $content2 . '");' . "\n";
     $output .= '</script>' . "\n";
     $output .= '<!-- End of ABC + player code -->' . "\n";
     

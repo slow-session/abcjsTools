@@ -34,7 +34,7 @@ The plugin includes the [abcjs](http://abcjs.net/) JavaScript library. The strin
 
 = What can be put in the ABC string that is placed in the shortcode? =
 
-There is much written about ABC Notation around the web. You can start [here](http://abcnotation.com)
+There is much written about ABC Notation around the web. You can start [here](http://abcjsTools.com)
 
 = What parameters may be used? =
 
@@ -206,4 +206,3 @@ Special thanks to http://www.beliefmedia.com/ for the idea to load the ABC strin
 = 5.8.1 =
 * Upgrade to use the abcjs 5.8.1 code.
 * Add entry point to draw music and audio and animate the audio.
-

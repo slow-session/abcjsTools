@@ -1,6 +1,6 @@
 "use strict";
 
-const abcNotation = (function () {
+const abcjsTools = (function () {
 
     function displayABCmusic(wrapperID, abcText) {
         // create the DOM elements
@@ -9,7 +9,7 @@ const abcNotation = (function () {
         let paperID = `abc-paper-${uniqid}`
 
         let wrapper = document.getElementById(wrapperID);
-	
+
         var abcTextarea = document.createElement("TEXTAREA");
         abcTextarea.id = textareaID;
         abcTextarea.style.display = 'block';
@@ -17,12 +17,12 @@ const abcNotation = (function () {
 
         var paperDiv = document.createElement("DIV");
         paperDiv.id = paperID;
-	paperDiv.class = "abc-paper abcjs-tune-number-0"
+        paperDiv.class = "abc-paper abcjs-tune-number-0"
         wrapper.appendChild(paperDiv);
-        
+
         // load the ABC into the textarea
-        document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g,"\n");
- 
+        document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g, "\n");
+
         // Draw the dots with the player
         let abcEditor = new window.ABCJS.Editor(textareaID, {
             paper_id: paperID,
@@ -42,7 +42,7 @@ const abcNotation = (function () {
         let audioID = `abc-audio-${uniqid}`
 
         let wrapper = document.getElementById(wrapperID);
-	
+
         var abcTextarea = document.createElement("TEXTAREA");
         abcTextarea.id = textareaID;
         abcTextarea.style.display = 'none';
@@ -50,16 +50,16 @@ const abcNotation = (function () {
 
         var paperDiv = document.createElement("DIV");
         paperDiv.id = paperID;
-	paperDiv.class = "abc-paper abcjs-tune-number-0";
+        paperDiv.class = "abc-paper abcjs-tune-number-0";
         wrapper.appendChild(paperDiv);
-        
+
         let audioDiv = document.createElement("DIV");
         audioDiv.id = audioID;
         wrapper.appendChild(audioDiv);
 
         // load the ABC into the textarea
-        document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g,"\n");
- 
+        document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g, "\n");
+
         // Draw the dots with the player
         let abcEditor = new window.ABCJS.Editor(textareaID, {
             paper_id: paperID,
@@ -89,12 +89,12 @@ const abcNotation = (function () {
         let audioID = `abc-audio-${uniqid}`
 
         let wrapper = document.getElementById(wrapperID);
-	
+
         var paperDiv = document.createElement("DIV");
         paperDiv.id = paperID;
-	    paperDiv.class = "abc-paper abcjs-tune-number-0";
+        paperDiv.class = "abc-paper abcjs-tune-number-0";
         wrapper.appendChild(paperDiv);
-        
+
         let audioDiv = document.createElement("DIV");
         audioDiv.id = audioID;
         wrapper.appendChild(audioDiv);
@@ -104,13 +104,13 @@ const abcNotation = (function () {
         abcTextarea.style.display = 'block';
         abcTextarea.style.width = '100%';
         abcTextarea.rows = 13;
-        abcTextarea.spellcheck = false;        
+        abcTextarea.spellcheck = false;
         abcTextarea.placeholder = "Type your ABC here...";
         wrapper.appendChild(abcTextarea);
-       
+
         // load the ABC into the textarea
-        document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g,"\n");
- 
+        document.getElementById(textareaID).innerHTML = abcText.replace(/\x01/g, "\n");
+
         // Draw the dots with the player
         let abcEditor = new window.ABCJS.Editor(textareaID, {
             paper_id: paperID,
@@ -134,11 +134,11 @@ const abcNotation = (function () {
 
     return {
         displayABCmusic: displayABCmusic,
-	    displayABCplayer: displayABCplayer,
+        displayABCplayer: displayABCplayer,
         displayABCeditor: displayABCeditor,
     };
 })();
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = abcNotation;
+    module.exports = abcjsTools;
 }
