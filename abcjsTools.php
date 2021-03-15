@@ -60,7 +60,7 @@ function abcjs_conditionally_load_resources( $posts ) {
 	if ( $has_abcjs ) {
 	    wp_enqueue_script( 'abcjs-font-awesome', 'https://use.fontawesome.com/b8d1222982.js' );
 		wp_enqueue_script( 'abcjs-plugin', plugins_url( '/js/abcjs-basic-min.js', __FILE__ ));
-	 	wp_enqueue_script( 'abc-notation', plugins_url( '/js/abc-notation.js', __FILE__ ));
+	 	wp_enqueue_script( 'abcjsTools', plugins_url( '/js/abcjsTools.js', __FILE__ ));
 
 		$plugin_url = plugin_dir_url( __FILE__ );
 	        wp_enqueue_style( 'style1', $plugin_url . 'abcjs-audio.css' );

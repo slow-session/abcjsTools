@@ -1,10 +1,9 @@
-=== ABC Notation ===
+=== ABCJS Tools ===
 Contributors: paulrosen
-Donate link: http://wordpress.paulrosen.net/plugins/abc-notation
-Tags: music abc-notation sheet-music abcjs
+Tags: music abc-notation sheet-music abcjs editor
 Requires at least: 4.0
-Tested up to: 5.2.2
-Stable tag: 5.8.1
+Tested up to: 5.7
+Stable tag: 6.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
