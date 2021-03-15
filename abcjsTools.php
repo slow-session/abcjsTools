@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 //
 //-- Add the javascript and css if there is a shortcode on the page.
 //
-function abcjs_conditionally_load_resources( $posts ) {
+function abcjs_tools_conditionally_load_resources( $posts ) {
 
 	if ( empty( $posts ) ) {
 		return $posts;
@@ -56,7 +56,7 @@ function abcjs_conditionally_load_resources( $posts ) {
 	return $posts;
 }
 
-add_filter( 'the_posts', 'abcjs_conditionally_load_resources' );
+add_filter( 'the_posts', 'abcjs_tools_conditionally_load_resources' );
 
 // This turns the shortcode parameter back into the originally pasted string.
 function process_abc( $content ) {
