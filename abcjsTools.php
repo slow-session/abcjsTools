@@ -1,16 +1,16 @@
 <?php
 /*
 Plugin Name: ABCJS Tools
-Plugin URI: http://wordpress.paulrosen.net/plugins/abc-notation
-Description: Include sheet music on your WordPress site by simply specifying the ABC style string in the shortcode <strong>[abcjs]</strong>. For a complete description of the syntax, see the <a href="http://wordpress.paulrosen.net/plugins/abc-notation">Plugin Site</a>.
-Version: 6.0.0
-Author: Paul Rosen
-Author URI: http://paulrosen.net
+Plugin URI: https://github.com/slow-session/abcjsTools
+Description: Include sheet music on your WordPress site by simply specifying the ABC style string in the shortcode <strong>[abc-music]</strong>. Also supports the new audio player in ABCJS 6.0.0 using <strong>[abc-player]</strong> and a simple ABC editor using <strong>[abc-editor]</strong>. Heavily derived from the Paul Rosen's <a href="https://wordpress.paulrosen.net/plugins/abc-notation">ABC Notation</a> plugin.
+Version: 0.0.1
+Author:  Andy Linton
+Author URI: https://github.com/asjl
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
 /*
-Copyright (C) 2015-2019 Paul Rosen
+Copyright (C) 2021 Andy Linton
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -123,7 +123,7 @@ function abcjs_create_music( $atts, $content ) {
     
     return $output;
 }
-add_shortcode( 'abcjs', 'abcjs_create_music' );
+add_shortcode( 'abc-music', 'abcjs_create_music' );
 
 //
 //-- Interpret the [abcjs-player] shortcode
@@ -146,7 +146,7 @@ function abcjs_create_player( $atts, $content ) {
     
     return $output;
 }
-add_shortcode( 'abcjs-player', 'abcjs_create_player' );
+add_shortcode( 'abc-player', 'abcjs_create_player' );
 
 //
 //-- Interpret the [abcjs-editor] shortcode
@@ -169,4 +169,4 @@ function abcjs_create_editor( $atts, $content ) {
     
     return $output;
 }
-add_shortcode( 'abcjs-editor', 'abcjs_create_editor' );
+add_shortcode( 'abc-editor', 'abcjs_create_editor' );
