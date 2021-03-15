@@ -75,7 +75,7 @@ const abcNotation = (function () {
                     displayRestart: true,
                     displayPlay: true,
                     displayProgress: true,
-                    displayWarp: true
+                    displayWarp: false
                 }
             }
         });
@@ -126,7 +126,7 @@ const abcNotation = (function () {
                     displayRestart: true,
                     displayPlay: true,
                     displayProgress: true,
-                    displayWarp: true
+                    displayWarp: false
                 }
             }
         });
