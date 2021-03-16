@@ -41,7 +41,7 @@ There is much written about ABC Notation around the web. You can start [here](ht
 
 == Thanks ==
 
-To Paul Rosen for his work on ABCJS and in particular on the ABC Notation plugin. The plugin has many more features that this software but was overkill for what I needed!
+To Paul Rosen for his work on ABCJS and in particular on the ABC Notation plugin. That plugin has many more features than this software but was overkill for what I needed!
 
 == Upgrade Notice ==
 
