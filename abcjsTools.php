@@ -59,7 +59,7 @@ function abcjs_tools_conditionally_load_resources( $posts ) {
 add_filter( 'the_posts', 'abcjs_tools_conditionally_load_resources' );
 
 // This turns the shortcode parameter back into the originally pasted string.
-function process_abc( $content ) {
+function abcjs_tools_process_abc( $content ) {
 	$content2 = preg_replace("&<br />\r\n&", "\x01", $content);
 	$content2 = preg_replace("&<br />\n&", "\x01", $content2);
 	$content2 = preg_replace("&<br>\r\n&", "\x01", $content2);
@@ -79,8 +79,8 @@ function process_abc( $content ) {
 //
 //-- Interpret the [abcjs] shortcode
 //
-function abcjs_create_music( $atts, $content ) {
-    $content2 = process_abc($content);
+function abcjs_tools_create_music( $atts, $content ) {
+    $content2 = abcjs_tools_process_abc($content);
 
     $wrapperID = 'abc-wrapper-' . uniqid();
 
@@ -93,13 +93,13 @@ function abcjs_create_music( $atts, $content ) {
     
     return $output;
 }
-add_shortcode( 'abc-music', 'abcjs_create_music' );
+add_shortcode( 'abc-music', 'abcjs_tools_create_music' );
 
 //
 //-- Interpret the [abcjs-player] shortcode
 //
-function abcjs_create_player( $atts, $content ) {
-    $content2 = process_abc($content);
+function abcjs_tools_create_player( $atts, $content ) {
+    $content2 = abcjs_tools_process_abc($content);
     
     $wrapperID = 'abc-wrapper-' . uniqid();
 
@@ -112,13 +112,13 @@ function abcjs_create_player( $atts, $content ) {
     
     return $output;
 }
-add_shortcode( 'abc-player', 'abcjs_create_player' );
+add_shortcode( 'abc-player', 'abcjs_tools_create_player' );
 
 //
 //-- Interpret the [abcjs-editor] shortcode
 //
-function abcjs_create_editor( $atts, $content ) {
-    $content2 = process_abc($content);
+function abcjs_tools_create_editor( $atts, $content ) {
+    $content2 = abcjs_tools_process_abc($content);
     
     $wrapperID = 'abc-wrapper-' . uniqid();
 
@@ -131,4 +131,4 @@ function abcjs_create_editor( $atts, $content ) {
     
     return $output;
 }
-add_shortcode( 'abc-editor', 'abcjs_create_editor' );
+add_shortcode( 'abc-editor', 'abcjs_tools_create_editor' );
