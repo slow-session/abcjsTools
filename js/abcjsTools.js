@@ -12,7 +12,7 @@ const abcjsTools = (function () {
 
         var abcTextarea = document.createElement("TEXTAREA");
         abcTextarea.id = textareaID;
-        abcTextarea.style.display = 'block';
+        abcTextarea.style.display = 'none';
         wrapper.appendChild(abcTextarea);
 
         var paperDiv = document.createElement("DIV");
